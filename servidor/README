@@ -1,0 +1,59 @@
+Este programa é um software livre criado pela 4Linux ( www.4linux.com.br ).
+Você pode redistribuí-lo e/ou modificá-lo sob os termos da GNU General Public License como publicado pela Free Software Foundation, na versão 3 da Licença, ou (a seu critério) qualquer versão posterior. 	
+Este programa é distribuído na esperança que possa ser útil, porém, SEM NENHUMA GARANTIA.
+Veja o GNU General Public License para mais detalhes <http://www.gnu.org/licenses/>.
+
+
+######################################################## Zabbix Server Install ################################################################
+
+A ferramenta zabbix-server-2.0-install é um shell script que faz a instalação do Servidor de monitoramento Zabbix.
+Esse script vem para facilitar a instalação e trazer as configurações prontas, junto ao script você tem que baixar os arquivos CONFIG e BOOT que são:
+BOOT -> traz a estrutura de boot;
+CONFIG -> é uma melhoria que a 4Linux realizou na estrutura do diretorio etc do zabbix (nível de organização dos arquivos). 
+
+### History
+Criado
+			por Alexandre Laniado
+				<alexandre.lt@4linux.com.br>
+				      <wolvlt@gmail.com>
+Upgrated
+
+			 por Tassya Ventura Frigieri
+				<tassya.frigieri@4linux.com.br>
+				   <tassya.ventura@tassya.org>
+
+
+Esse script está homologado para as seguintes situações:
+DISTRIBUIÇÕES:
+	Debian Squeeze 64 bits
+	Ubuntu 12.04 LTS 64 bits
+	CentOS 6.3 64 bits
+
+VERSÃO DO ZABBIX:
+	Familia 2.0.x
+
+BANCO DE DADOS:
+	PostgreSQL-9.2
+A instalação Debian/Ubuntu está utilizando o repositorio oficial do postgres instalando e e adicionando a chave.
+A instalação RedHat/CentOS está utilizando o backports yum.postgresql.org 
+
+Para que o script funcione corretamente ele terá que satisfazer as condições abaixo:
+	PRÉ INSTALAÇÃO: 
+		dialog;
+
+	PERMISSÃO: 
+		root;
+	
+	Pacotes presente no mesmo diretorio que "rodar" o script:
+		FONTE	- zabbix-VERSAO.tar.gz   
+		CONFIG	- zabbix-server-2.0-config.tar
+		BOOT	- zabbix-server-bootscript-debian.tar   ou   zabbix-server-bootscript-centos.tar
+  	ATENÇÃO: Caso você altere o nome de qualquer um desses arquivos, você terá que alterar o codigo do script.
+
+ATENÇÃO:
+	Prestar muita atenção nas dependencias. Dependendo do seu ambiente o script pode não conseguir resolve-las.
+	
+
+
+************ Para instruções de instalação, por favor leia o arquivo INSTALL
+
