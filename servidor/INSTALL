@@ -1,0 +1,21 @@
+Para instalar o zabbix-server-2.0-install
+
+PROCEDIMENTO:
+	Debian/Ubuntu:
+		# apt-get install dialog
+		# chmod +x zabbix-server-2.0-install.sh
+		# ./zabbix-server-2.0-install.sh
+
+
+	RedHat/CentOS:
+		# yum install dialog
+		# chmod +x zabbix-server-2.0-install.sh
+		# ./zabbix-server-2.0-install.sh
+
+Finalizado o script é só ir até um browser e digitar o IP do servidor zabbix para concluir a instalação.
+
+OBSERVAÇÃO IMPORTANTES: 
+	Não esquecer que nas distribuições Red Hat e CentOS existem regras de iptables e SELinux configuradas.
+	Ao finalizar a instalação via web altere as permissões dos seguintes arquivos:
+		# chmod 0750 /var/lib/zabbix/frontend/conf/
+		# chmod 0640 /var/lib/zabbix/frontend/conf/zabbix.conf.php

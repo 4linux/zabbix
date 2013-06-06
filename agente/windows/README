@@ -1,0 +1,33 @@
+######### 4Linux Free Software Solution ##########
+
+Participantes:	Alexandre Laniado Tuchsznajder
+		Tassya Ventura Frigiéri		
+		Valter Lisboa Junior
+
+
+Esse procedimento está homologado para os seguintes pacotes:
+ZABBIX - 2.0.x
+Windows - Server2003
+	  Windows 7
+	  	
+Copiar a pasta Zabbix para o c:
+
+Aletar o arquivo conf → agent → chekings.conf
+
+  1 Server= IP_SERVIDOR
+  2 Hostname= NOME_DA_MAQUINA_A_SER_MONITORADA
+
+Executar os seguintes comando no promt do windows da máquina a ser monitorada.
+
+c: cd \Zabbix\bin
+c: zabbix_agentd.exe -c ..\conf\zabbix_agentd.conf
+c: zabbix_agentd.exe -c ..\conf\zabbix_agentd.conf --install
+
+Entrar nos serviços do windows e ativar o ZabbixAgent
+
+
+No servidor do Zabbix, testar:
+
+# zabbix_get -s IP_WINDOWS -k agent.ping
+  valor esperado 1
+
